@@ -63,7 +63,7 @@ public:
             for (uint32_t x = 0; x < width; ++x)
             {
                 size_t i = (y * width + x) * 3;
-                bmp.setpixel(width - x - 1, height - y - 1, Pixel(rgb24[i], rgb24[i+1], rgb24[i+2]));
+                bmp.setPixel(width - x - 1, height - y - 1, Pixel(rgb24[i], rgb24[i+1], rgb24[i+2]));
             }
         }
         return bmp;
