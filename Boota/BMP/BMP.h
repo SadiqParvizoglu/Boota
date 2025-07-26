@@ -45,12 +45,12 @@ struct BMPColorHeader
 
 struct Pixel
 {
-    uint8_t r{0};
-    uint8_t g{0};
-    uint8_t b{0};
+    uint8_t red{0};
+    uint8_t green{0};
+    uint8_t blue{0};
 
     Pixel() = default;
-    Pixel(uint8_t red, uint8_t green, uint8_t blue) : r(red), g(green), b(blue) {}
+    Pixel(uint8_t red, uint8_t green, uint8_t blue) : red(red), green(green), blue(blue) {}
 };
 
 class BMP
@@ -181,9 +181,9 @@ public:
 
         uint32_t channels = bmp_infoheader.bitcount / 8;
         size_t idx = channels * (y * bmp_infoheader.width + x);
-        data[idx + 0] = pixel.b;
-        data[idx + 1] = pixel.g;
-        data[idx + 2] = pixel.r;
+        data[idx + 0] = pixel.blue;
+        data[idx + 1] = pixel.green;
+        data[idx + 2] = pixel.red;
         if (channels == 4)
             data[idx + 3] = 255;
     }
