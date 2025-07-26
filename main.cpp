@@ -4,7 +4,7 @@
 #include <thread>
 #include <chrono>
 
-int winWidth=1280,winHeight=720;
+int winWidth=640,winHeight=480;
 
 int main()
 {
@@ -17,10 +17,14 @@ int main()
         window.clear();
 
         bmp=camera.captureBMP();
+        bmp.write("image.bmp");
+
+        bmp.toGrayscale();
+
         window.showBMP(bmp);
 
         window.display();
-        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+        std::this_thread::sleep_for(std::chrono::milliseconds(8));
     }
     return 0;
 }
